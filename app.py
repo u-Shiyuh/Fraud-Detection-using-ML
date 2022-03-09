@@ -18,9 +18,6 @@ rf = pickle.load(open(filename_rf, 'rb'))
 svm = pickle.load(open(filename_svm, 'rb'))
 scaler = pickle.load(open(filename_scaler, 'rb'))
 
-types = ["CASH_OUT", "TRANSFER"]
-arrangement = ["step","amount","newbalanceOrig","newbalanceDest"]
-
 @app.route('/', methods=['GET','POST'])
 def init():
     return render_template('index.html')
@@ -58,4 +55,4 @@ def predict_with_ajax():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
+    app.run()
