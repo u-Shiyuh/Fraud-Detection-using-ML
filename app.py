@@ -22,36 +22,36 @@ filename_scaler = 'scaler.pkl'
 def init():
     return render_template('index.html')
 
-# @app.route('/predict_with_ajax', methods=['POST', 'GET'])
-# def predict_with_ajax():
-# #   if request.method == "POST":
-# #     qtc_data = request.get_json()
-# #     amount = qtc_data[0].get("amount")
-# #     oldbalanceOrig = qtc_data[0].get('oldbalanceOrig')
-# #     newbalanceOrig = qtc_data[0].get('newbalanceOrig')
-# #     oldbalanceDest = qtc_data[0].get('oldbalanceDest')
-# #     newbalanceDest = qtc_data[0].get('newbalanceDest')
-# #     predict_val = pd.DataFrame(data = [
-# #         [ datetime.datetime.now().hour,
-# #         int(amount),
-# #         int(newbalanceOrig),
-# #         int(newbalanceDest),
-# #         int(oldbalanceOrig) - (int(amount) + int(newbalanceOrig)),
-# #         int(oldbalanceDest) - (int(newbalanceDest) + int(amount))]
-# #     ], columns = ['step', 'amount','newbalanceOrig','newbalanceDest','originError','destError'])
-# #     print(predict_val)
-# #     predict_val = scaler.transform(predict_val)
-# #     print(predict_val)
-# #     return_value = {
-# #         'dtc': int(dtc.predict(predict_val)[0]),
-# #         'gnb': int(gnb.predict(predict_val)[0]),
-# #         'lr': int(lr.predict(predict_val)[0]),
-# #         'rf': int(rf.predict(predict_val)[0]),
-# #         'svm' : int(svm.predict(predict_val)[0])
-# #     }
+@app.route('/predict_with_ajax', methods=['POST', 'GET'])
+def predict_with_ajax():
+#   if request.method == "POST":
+#     qtc_data = request.get_json()
+#     amount = qtc_data[0].get("amount")
+#     oldbalanceOrig = qtc_data[0].get('oldbalanceOrig')
+#     newbalanceOrig = qtc_data[0].get('newbalanceOrig')
+#     oldbalanceDest = qtc_data[0].get('oldbalanceDest')
+#     newbalanceDest = qtc_data[0].get('newbalanceDest')
+#     predict_val = pd.DataFrame(data = [
+#         [ datetime.datetime.now().hour,
+#         int(amount),
+#         int(newbalanceOrig),
+#         int(newbalanceDest),
+#         int(oldbalanceOrig) - (int(amount) + int(newbalanceOrig)),
+#         int(oldbalanceDest) - (int(newbalanceDest) + int(amount))]
+#     ], columns = ['step', 'amount','newbalanceOrig','newbalanceDest','originError','destError'])
+#     print(predict_val)
+#     predict_val = scaler.transform(predict_val)
+#     print(predict_val)
+#     return_value = {
+#         'dtc': int(dtc.predict(predict_val)[0]),
+#         'gnb': int(gnb.predict(predict_val)[0]),
+#         'lr': int(lr.predict(predict_val)[0]),
+#         'rf': int(rf.predict(predict_val)[0]),
+#         'svm' : int(svm.predict(predict_val)[0])
+#     }
 
-# #     return jsonify(return_value)
-#     return None
+#     return jsonify(return_value)
+    return None
 
 
 
