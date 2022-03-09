@@ -3,13 +3,14 @@
 from flask import Flask, render_template, url_for, request, jsonify
 # import pickle
 # import datetime
-# import logging
+import logging
+import sys
 app = Flask(__name__)
 
 
 
-# app.logger.addHandler(logging.StreamHandler(sys.stdout))
-# app.logger.setLevel(logging.ERROR)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 # filename_dtc = 'dtc.pkl'
 # filename_gnb = 'gnb.pkl'
