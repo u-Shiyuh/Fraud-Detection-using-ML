@@ -34,12 +34,6 @@ def predict_with_ajax():
     newbalanceOrig = qtc_data[0].get('newbalanceOrig')
     oldbalanceDest = qtc_data[0].get('oldbalanceDest')
     newbalanceDest = qtc_data[0].get('newbalanceDest')
-    print(datetime.datetime.now().hour)
-    print(datetime.datetime.now().hour)
-    print(datetime.datetime.now().hour)
-    print(datetime.datetime.now().hour)
-    print(datetime.datetime.now().hour)
-    print(datetime.datetime.now().hour)
     predict_val = pd.DataFrame(data = [
         [ datetime.datetime.now().hour,
         int(amount),
