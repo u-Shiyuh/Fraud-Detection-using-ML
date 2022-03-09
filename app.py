@@ -3,7 +3,13 @@ import pandas as pd
 from flask import Flask, render_template, url_for, request, jsonify
 import pickle
 import datetime
+import logging
 app = Flask(__name__)
+
+
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 filename_dtc = 'dtc.pkl'
 filename_gnb = 'gnb.pkl'
@@ -56,4 +62,5 @@ def predict_with_ajax():
 
 
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.debug = True
+    app.run()
