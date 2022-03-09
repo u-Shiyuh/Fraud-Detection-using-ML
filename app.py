@@ -56,4 +56,4 @@ def predict_with_ajax():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug= True)
