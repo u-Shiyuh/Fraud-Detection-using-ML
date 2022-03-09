@@ -5,18 +5,18 @@ import pickle
 import datetime
 app = Flask(__name__)
 
-# filename_dtc = 'dtc.pkl'
-# filename_gnb = 'gnb.pkl'
-# filename_lr = 'lr.pkl'
-# filename_rf = 'rf.pkl'
-# filename_svm = 'svm.pkl'
-# filename_scaler = 'scaler.pkl'
-# dtc = pickle.load(open(filename_dtc, 'rb'))
-# gnb = pickle.load(open(filename_gnb, 'rb'))
-# lr = pickle.load(open(filename_lr, 'rb'))
-# rf = pickle.load(open(filename_rf, 'rb'))
-# svm = pickle.load(open(filename_svm, 'rb'))
-# scaler = pickle.load(open(filename_scaler, 'rb'))
+filename_dtc = 'dtc.pkl'
+filename_gnb = 'gnb.pkl'
+filename_lr = 'lr.pkl'
+filename_rf = 'rf.pkl'
+filename_svm = 'svm.pkl'
+filename_scaler = 'scaler.pkl'
+dtc = pickle.load(open(filename_dtc, 'rb'))
+gnb = pickle.load(open(filename_gnb, 'rb'))
+lr = pickle.load(open(filename_lr, 'rb'))
+rf = pickle.load(open(filename_rf, 'rb'))
+svm = pickle.load(open(filename_svm, 'rb'))
+scaler = pickle.load(open(filename_scaler, 'rb'))
 
 @app.route('/', methods=['GET','POST'])
 def init():
