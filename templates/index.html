@@ -42,40 +42,40 @@
 </head>
 
 <body>
-  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:20%;font-weight:bold;" id="mySidebar"><br>
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:22.5%;font-weight:bold;" id="mySidebar"><br>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
     <div class="w3-container">
       <h3 class="w3-padding-10"><b>Applied<br>Machine Learning</b></h3>
     </div>
     <div class="w3-bar-block">
       <form name="input" action="." method="post">
-            <label  style="font-size:1.25em">  Step </label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="step" id="step" onchange="try_ajax()">
+            <label  style="font-size:.9em">  Step </label> <br/>
+            <input style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="step" id="step" onchange="try_ajax()">
             <br/>
-            <label style="font-size:1.25em"> Amount </label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="amount" id="amount" onchange="try_ajax()">
+            <label style="font-size:.9em;"> Amount </label> <br/>
+            <input style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="amount" id="amount" onchange="try_ajax()">
             <br/>
-            <label style="font-size:1.25em"> Origin Account Old Balance</label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceOrig" id="oldbalanceOrig" onchange="try_ajax()">
+            <label style="font-size:.9em"> Origin Account Old Balance</label> <br/>
+            <input style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceOrig" id="oldbalanceOrig" onchange="try_ajax()">
             <br/>
-            <label style="font-size:1.25em"> Origin Account New Balance</label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceOrig" id="newbalanceOrig" onchange="try_ajax()">
+            <label style="font-size:.9em"> Origin Account New Balance</label> <br/>
+            <input style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceOrig" id="newbalanceOrig" onchange="try_ajax()">
             <br/>
-            <label style="font-size:1.25em"> Destination Account New Balance</label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceDest" id="oldbalanceDest" onchange="try_ajax()">
+            <label style="font-size:.9em"> Destination Account New Balance</label> <br/>
+            <input style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceDest" id="oldbalanceDest" onchange="try_ajax()">
             <br/>
-            <label style="font-size:1.25em"> Destination Account Old Balance</label> <br/>
-            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceDest" id="newbalanceDest" onchange="try_ajax()">
+            <label style="font-size:.9em"> Destination Account Old Balance</label> <br/>
+            <input  style="margin-bottom: 10px;" type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceDest" id="newbalanceDest" onchange="try_ajax()">
             <br/>
 
       </form>
 
-      <footer>
+      <footer style="position: absolute; bottom: 0;">
       </br>
       </br>
       </br>
       </br> 
-      <div style="color:black; position: absolute; bottom: 0;">
+      <div style="color:black;">
         <p style="font-size:10px">Creator: Matthew Ochoa</p>
         <p style="font-size:10px"><a href="https://github.com/u-Shiyuh/Fraud-Detection-using-ML">Github Repository</a></p>
       </div>
