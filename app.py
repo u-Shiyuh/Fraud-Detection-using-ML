@@ -1,16 +1,10 @@
+from distutils.log import debug
 import numpy as np
 import pandas as pd
 from flask import Flask, render_template, url_for, request, jsonify
 import pickle
-import datetime
-import logging
-import sys
+
 app = Flask(__name__)
-
-
-
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 
 filename_dtc = 'dtc.pkl'
 filename_gnb = 'gnb.pkl'
@@ -38,13 +32,14 @@ def predict_with_ajax():
     newbalanceOrig = qtc_data[0].get('newbalanceOrig')
     oldbalanceDest = qtc_data[0].get('oldbalanceDest')
     newbalanceDest = qtc_data[0].get('newbalanceDest')
+    step = qtc_data[0].get('step')
     predict_val = pd.DataFrame(data = [
-        [ datetime.datetime.now().hour,
-        int(amount),
-        int(newbalanceOrig),
-        int(newbalanceDest),
-        int(oldbalanceOrig) - (int(amount) + int(newbalanceOrig)),
-        int(oldbalanceDest) - (int(newbalanceDest) + int(amount))]
+        [ float(step),
+        float(amount),
+        float(newbalanceOrig),
+        float(newbalanceDest),
+        float(oldbalanceOrig) - (float(amount) + float(newbalanceOrig)),
+        float(oldbalanceDest) - (float(newbalanceDest) + float(amount))]
     ], columns = ['step', 'amount','newbalanceOrig','newbalanceDest','originError','destError'])
     print(predict_val)
     predict_val = scaler.transform(predict_val)
@@ -62,4 +57,4 @@ def predict_with_ajax():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)

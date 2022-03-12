@@ -6,89 +6,149 @@
   <title>Case Study Applied Machine Learning</title>
   <script src="{{ url_for('static', filename='script.js')}}">
   </script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <style>
-    .flex-container {
-    display: flex;
-    flex-wrap: nowrap;
+  body,h1,h2,h3,h4,h5 {
+    font-family: "Poppins", sans-serif
   }
-  
-  .flex-container > div {
-    text-align: center;
-    line-height: 50px;
-    font-size: 15px;
-    }
-  .left-right {
+
+  body {
+    font-size:16px;
+  }
+  .w3-half img{
+    margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer
+  }
+
+  .w3-half img:hover{
+    opacity:1
+  }
+
+  .flex-container {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+  background-color: #f44336;
   }
-  .left-right > left, right {
-    text-align: center;
-    line-height: 50px;
-    font-size: 15px;
-    }
+
+  .flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  }
+
   </style>
 </head>
 
 <body>
-<div class="left-right">
-  <div class="right">
-  <form name="input" action="." method="post">
-      <div class="flex-container">
-        <div>
-          <label> Amount </label> <br/>
-          <input type="range" min="0" max="100000" value="50" class="slider" name="amount" id="amount" onchange="try_ajax()" oninput="this.nextElementSibling.value = this.value">
-          <output>000,000</output>
-          <br/>
-          <label> Origin Account Old Balance</label> <br/>
-          <input type="range" min="0" max="100000" value="50" class="slider" name="oldbalanceOrig" id="oldbalanceOrig" onchange="try_ajax()" oninput="this.nextElementSibling.value = this.value">
-          <output>000,000</output>
-          <br/>
-          <label> Origin Account Updated Balance</label> <br/>
-          <input type="range" min="0" max="100000" value="50" class="slider" name="newbalanceOrig" id="newbalanceOrig" onchange="try_ajax()"oninput="this.nextElementSibling.value = this.value">
-          <output>000,000</output>
-        </div>
-        <div>
-          <label> Destination Account Updated Balance</label> <br/>
-          <input type="range" min="0" max="100000" value="50" class="slider" name="oldbalanceDest" id="oldbalanceDest" onchange="try_ajax()" oninput="this.nextElementSibling.value = this.value">
-          <output>000,000</output>
-          <br/>
-          <label> Destination Account Old Balance</label> <br/>
-          <input type="range" min="0" max="100000" value="50" class="slider" name="newbalanceDest" id="newbalanceDest" onchange="try_ajax()" oninput="this.nextElementSibling.value = this.value">
-          <output>000,000</output>
-          <br/>
-        </div>
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-10"><b>Applied<br>Machine Learning</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <form name="input" action="." method="post">
+            <label  style="font-size:16px">  Step </label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="step" id="step" onchange="try_ajax()">
+            <br/>
+            <label style="font-size:16px"> Amount </label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="amount" id="amount" onchange="try_ajax()">
+            <br/>
+            <label style="font-size:16px"> Origin Account Old Balance</label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceOrig" id="oldbalanceOrig" onchange="try_ajax()">
+            <br/>
+            <label style="font-size:16px"> Origin Account New Balance</label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceOrig" id="newbalanceOrig" onchange="try_ajax()">
+            <br/>
+            <label style="font-size:15.5px"> Destination Account New Balance</label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="oldbalanceDest" id="oldbalanceDest" onchange="try_ajax()">
+            <br/>
+            <label style="font-size:16px"> Destination Account Old Balance</label> <br/>
+            <input type="number" min="0" max="10000000" value="0" step=".01" class="slider" name="newbalanceDest" id="newbalanceDest" onchange="try_ajax()">
+            <br/>
+
+      </form>
+
+      <footer>
+      </br>
+      </br>
+      </br>
+      </br> 
+      <div style="color:black">
+        <p style="font-size:10px">Creator: Matthew Ochoa</p>
+        <p style="font-size:10px"><a href="https://github.com/u-Shiyuh/Fraud-Detection-using-ML">Github Repository</a></p>
       </div>
-    </form>
-</div>
-<div class="right">
-<p> prediction </p>
+      </footer>
+    </div>
+  </nav>
+  
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>Applied Machine Learning</span>
+  </header>
+
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Prediction</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+  </div>
+
 <table>
   <tr>
     <th>Model</th>
   </tr>
   <tr>
     <td>Decision Tree</td>
-    <td id="dtc"> Fraud</td>
+    <td id="dtc">No Prediction</td>
   </tr>
   <tr>
     <td>Gaussian Naive Bayes</td>
-    <td id="gnb"> Fraud </td>
+    <td id="gnb">No Prediction</td>
   </tr>
   <tr>
     <td>Logistic Regression</td>
-    <td id="lr"> Fraud </td>
+    <td id="lr">No Prediction</td>
   </tr>
   <tr>
     <td>Random Forest</td>
-    <td id="rf"> Fraud </td>
+    <td id="rf">No Prediction</td>
   </tr>
   <tr>
-    <td>Support Vector Machine</td>
-    <td id="svm"> Fraud </td>
+    <td width="80%"> Support Vector Machine</td>
+    <td id="svm">No Prediction</td>
   </tr>
-</div>
-</div>
+</table>
+
+
+</br>
+
+  <th><b>Sample Fraud Transactions </b></th>
+</br>
+</br>
+
+<table>
+
+  <tr>
+    <td width="7%">Step</td>
+    <td width="10%">Amount</td>
+    <td width="15%">Origin Old Balance</td>
+    <td width="15%">Origin New Balance</td>
+    <td width="20%">Destination New Balance</td>
+    <td width="20%">Destination Old Balance</td>
+</tr>
+
+
+
+  </table>
+  </div>
+
+<!--
+
+            <label> Amount </label> <br/>
+          <input type="number" min="0" max="10000000" value="50" class="slider" name="amount" id="amount" onchange="try_ajax()" oninput="this.nextElementSibling.value = this.value">
+          <output>000,000</output>
+          <br/>
+-->
 <script
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
