@@ -16,7 +16,7 @@ function predictValues() {
 function try_ajax() {
     var amount = parseInt(document.getElementById("amount").value) || 0;
     var oldbalanceOrig = parseInt(document.getElementById("oldbalanceOrig").value) || 0;
-    var newbalanceOrig = parseInt(document.getElementById("oldbalanceOrig").value) || 0;
+    var newbalanceOrig = parseInt(document.getElementById("newbalanceOrig").value) || 0;
     var oldbalanceDest = parseInt(document.getElementById("oldbalanceDest").value) || 0;
     var newbalanceDest = parseInt(document.getElementById("newbalanceDest").value) || 0;
     var step = parseInt(document.getElementById("step").value) || 0;

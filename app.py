@@ -32,6 +32,8 @@ def predict_with_ajax():
     newbalanceOrig = qtc_data[0].get('newbalanceOrig')
     oldbalanceDest = qtc_data[0].get('oldbalanceDest')
     newbalanceDest = qtc_data[0].get('newbalanceDest')
+    print(oldbalanceOrig)
+    print(newbalanceOrig)
     step = qtc_data[0].get('step')
     predict_val = pd.DataFrame(data = [
         [ float(step),
@@ -57,4 +59,4 @@ def predict_with_ajax():
 
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug = True)   
